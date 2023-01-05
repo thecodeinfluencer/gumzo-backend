@@ -13,6 +13,11 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+// default route
+app.get('/', (req, res) => {
+  res.send('Gumzo!');
+});
+
 // declare routes
 app.use('/api/v1/client/chat', chatRoutes);
 

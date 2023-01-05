@@ -20,7 +20,7 @@ export default async function responseFromPromptStructure(
 
   const response = await myOpenAI.createCompletion({
     model: 'text-davinci-003',
-    prompt: `${structure} ${JSON.stringify(conversation)} AI:`,
+    prompt: `${structure}.\n\n. ${JSON.stringify(conversation)} AI:`,
     temperature: 0.9,
     max_tokens: 150,
     top_p: 1,
