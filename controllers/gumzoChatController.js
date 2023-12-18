@@ -1,4 +1,4 @@
-import responseFromPromptStructure from '../utilities/responseFromPromptStructure.js';
+import responseFromPromptStructure from "../utilities/responseFromPromptStructure.js";
 
 export const gumzoChat = async (req, res, next) => {
   const structure =

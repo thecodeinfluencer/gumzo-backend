@@ -1,7 +1,8 @@
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import express from 'express';
-import chatRoutes from './routes/chatRoutes.js';
+import bodyParser from "body-parser";
+import cors from "cors";
+import express from "express";
+import chatRoutes from "./routes/chatRoutes.js";
+import handleError from "./utilities/handleError.js";
 
 // declare variables
 const app = express();
@@ -14,14 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 // default route
-app.get('/', (req, res) => {
-  res.send('Gumzo!');
+app.get("/", (req, res) => {
+  res.send("Gumzo!");
 });
 
 // declare routes
-app.use('/api/v1/client/chat', chatRoutes);
+app.use("/api/v1/client/chat", chatRoutes);
 
 // init app
 app.listen(PORT, () => {
-  console.log(`listening on  ${PORT}`);
+  handleError("listening on PORT", PORT);
 });
