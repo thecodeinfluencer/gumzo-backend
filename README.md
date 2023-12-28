@@ -12,7 +12,7 @@ A backend to serve a reactjs chat application.\
    ```
 2. Run `npm run dev`
 3. The request body looks like this:
-   ```
+   ```json
    {
     "conversation": [
         {
@@ -31,7 +31,7 @@ A backend to serve a reactjs chat application.\
 
 This project is deployed to **Google Cloud App Engine**. To deploy it, do the following:
 1. Create an `app.yml` file with the following:
-   ```
+   ```yml
    runtime: nodejs20
    instance_class: F2
    env_variables:
