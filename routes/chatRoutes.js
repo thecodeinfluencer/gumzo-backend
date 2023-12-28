@@ -5,6 +5,7 @@ import { kejeliChat } from "../controllers/kejeliChatController.js";
 import { rafikiChat } from "../controllers/rafikiChatController.js";
 
 const router = express.Router();
+
 router.route("/gumzo").post(gumzoChat);
 router.route("/jibu").post(jibuChat);
 router.route("/rafiki").post(rafikiChat);
