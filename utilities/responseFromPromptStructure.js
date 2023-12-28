@@ -10,12 +10,22 @@ export default async function responseFromPromptStructure(
   const { conversation } = req.body;
 
   if (!conversation) {
-    res.send({ info: "Please include a conversation start" });
+    res.status(400).send({ info: "Please include a conversation start" });
+    return;
+  }
+
+  if (conversation[conversation.length - 1]?.message?.length > 150) {
+    res.status(400).send({ info: "Input message too large" });
+    return;
+  }
+
+  if (conversation.length > 10) {
+    res.status(400).send({ info: "Trial exceeded for this conversation" });
     return;
   }
 
   if (!Array.isArray(conversation)) {
-    res.send({ info: "Conversation should be an array" });
+    res.status(400).send({ info: "Conversation should be an array" });
     return;
   }
 
@@ -40,13 +50,8 @@ export default async function responseFromPromptStructure(
     });
   } catch (error) {
     handleError("catch", error);
-    const message =
-      "Sorry, an error occured on our end. Please try again later.";
-
-    res.send({
-      prompt: conversation,
-      message,
-      thread: [...conversation, { owner: "AI", message }],
+    res.status(400).send({
+      info: "Sorry, an error occured on our end. Please try again later.",
     });
   }
 }
