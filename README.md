@@ -7,10 +7,25 @@ A backend to serve a reactjs chat application.\
 ## Setup
 
 1. Add `.env` with the contents below:
-```properties
-OPENAI_API_KEY = ""
-```
+   ```properties
+   OPENAI_API_KEY = ""
+   ```
 2. Run `npm run dev`
+3. The request body looks like this:
+   ```
+   {
+    "conversation": [
+        {
+            "owner": "Human",
+            "message": "Hello"
+        },
+        {
+            "owner": "AI",
+            "message": "Hi there! Nice to meet you. How can I help you today?"
+        }
+    ]
+   }
+   ```
 
 ## Deployment
 
@@ -18,9 +33,7 @@ This project is deployed to **Google Cloud App Engine**. To deploy it, do the fo
 1. Create an `app.yml` file with the following:
    ```
    runtime: nodejs20
-
    instance_class: F2
-
    env_variables:
      OPENAI_API_KEY: ""
    ```
