@@ -28,5 +28,5 @@ This project is deployed to **Google Cloud App Engine**. To deploy it, do the fo
 
 ## Production 
 The project is hosted at:
-(gumzoai.el.r.appspot.com)[https://gumzoai.el.r.appspot.com]
+[gumzoai.el.r.appspot.com](https://gumzoai.el.r.appspot.com)
 
