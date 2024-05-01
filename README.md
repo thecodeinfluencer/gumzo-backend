@@ -40,6 +40,11 @@ This project is deployed to **Google Cloud App Engine**. To deploy it, do the fo
 3. Run `gcloud app deploy`
 
 ## Production 
+
 The project is hosted at:
 [gumzoai.el.r.appspot.com](https://gumzoai.el.r.appspot.com)
+
+## Frontend
+
+To setup frontend for this app, go to [thecodeinfluencer/gumzo-frontend](https://github.com/thecodeinfluencer/gumzo-frontend)
 
