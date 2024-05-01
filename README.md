@@ -1,4 +1,4 @@
-## Node.js Express GumzoAI Chat API
+## Gumzo AI - Backend
 
 ## About
 A backend to serve a reactjs chat application.\
