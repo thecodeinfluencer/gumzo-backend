@@ -16,7 +16,7 @@ app.use(cors());
 
 // default route
 app.get("/", (req, res) => {
-  res.send("Gumzo!");
+  res.send("Welcome to Gumzo Backend! Interact with the app at https://gumzoai.web.app/ or explore these github repos: https://github.com/thecodeinfluencer/gumzo-backend  https://github.com/thecodeinfluencer/gumzo-frontend");
 });
 
 // declare routes
